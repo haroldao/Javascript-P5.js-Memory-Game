@@ -25,6 +25,7 @@ class Card {
 
 function loadFaceUpCards(){
   faceUpCards= [
+    loadImage("assets/Card.png"),
     loadImage("assets/Card-1.png"),
     loadImage("assets/Card-2.png"),
     loadImage("assets/Card-3.png"),
@@ -67,7 +68,7 @@ function createCards(){
 }
 
 function setup (){
-  createCanvas(1000, 1000);
+  createCanvas(2000, 2000);
   // window.addEventListener("resize", ()=>{
   //   createCanvas(window.innerWidth, window.innerHeight);
   //   console.log("resize");
