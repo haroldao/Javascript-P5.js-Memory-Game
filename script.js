@@ -9,6 +9,14 @@ class Card{
     this.width = 250
     this.faceUpImage = faceUpImage
   }
+
+  render(){
+    fill(0, 0, 0)
+    stroke(255, 255, 255)
+    strokeWeight(4)
+    rect(this.x, this.y, this.width, this.width, 20)
+    image(this.faceUpImage, this.x, this.y, this.width, this.width)
+  }
 }
 
 function loadFaceUpCards(){
