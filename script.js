@@ -2,6 +2,9 @@ let faceUpCards = []
 let deck = []
 
 
+const rows = 6
+const columns = 6
+
 class Card{
   constructor(faceUpImage, x, y){
     this.x = x
@@ -45,6 +48,14 @@ function createDeck(images){
   for(let i = 0; i < faceUpCards.length; i++){
     deck.push(images[i])
     deck.push(images[i]) //We want 2 cards.. so we duplicate
+  }
+}
+
+function createCards(){
+  for(let i=0; i < columns; i++){
+    for(let j=0; j < rows; j++){
+      //image
+    }
   }
 }
 
