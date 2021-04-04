@@ -25,6 +25,7 @@ class Card {
 
 function loadFaceUpCards(){
   faceUpCards= [
+    loadImage("assets/Card.png"),
     loadImage("assets/Card-1.png"),
     loadImage("assets/Card-2.png"),
     loadImage("assets/Card-3.png"),
