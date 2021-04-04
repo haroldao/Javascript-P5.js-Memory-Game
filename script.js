@@ -3,17 +3,18 @@ let faceUpCards = []
     cards = []
     faceDownCard = []
 
-const rows = 6
+const rows = 3
       columns = 6
 
 class Card {
   constructor(x, y, faceUpImage){
     this.x = x
     this.y = y
-    this.width = 250
-    this.height = 250
+    this.width = 200
+    this.height = 200
     this.faceUpImage = faceUpImage
     this.faceDownImage = faceDownCard
+    this.isFaceUp = true
   }
 
   render(){
@@ -21,8 +22,14 @@ class Card {
     // stroke(0, 0, 0)
     // strokeWeight(4)
     rect(this.x, this.y, this.width, this.height, 20)
-    // image(this.faceUpImage, this.x, this.y, this.width, this.height)
-    image(this.faceDownImage, this.x, this.y, 40, 40)
+
+    if(this.isFaceUp){
+      image(this.faceUpImage, this.x, this.y, this.width, this.height)
+    }
+    else{
+      image(this.faceDownImage, this.x + 40, this.y + 40, 40, 40)
+    }
+    
   }
 }
 
