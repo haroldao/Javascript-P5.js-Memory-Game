@@ -1,6 +1,7 @@
 let faceUpCards = []
 let deck = []
 
+let cards = []
 
 const rows = 6
 const columns = 6
@@ -55,6 +56,12 @@ function createCards(){
   for(let i=0; i < columns; i++){
     for(let j=0; j < rows; j++){
       //image
+      let card = new Card(
+        i * 280 + 40,
+        j * 280 + 40,
+        deck.pop()
+      )
+      cards.push(card)
     }
   }
 }
@@ -66,8 +73,12 @@ function setup (){
   })
   loadFaceUpCards();
   createDeck(faceUpCards);
+  createCards()
 }
 
 function draw(){
   background(220);
+  for(let i = 0; i < cards.length; i++){
+    cards[i].render()
+  }
 }
