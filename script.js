@@ -1,6 +1,16 @@
 let faceUpCards = []
 let deck = []
 
+
+class Card{
+  constructor(faceUpImage, x, y){
+    this.x = x
+    this.y = y
+    this.width = 250
+    this.faceUpImage = faceUpImage
+  }
+}
+
 function loadFaceUpCards(){
   faceUpCards= [
     loadImage("assets/Card-1.png"),
@@ -31,7 +41,10 @@ function createDeck(images){
 }
 
 function setup (){
-  createCanvas(window.innerWidth, window.innerHeight);
+  window.addEventListener("resize", ()=>{
+    createCanvas(window.innerWidth, window.innerHeight);
+    console.log("resize");
+  })
   loadFaceUpCards();
   createDeck(faceUpCards);
 }
