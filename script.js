@@ -1,4 +1,5 @@
 let faceUpCards = []
+let deck = []
 
 function loadFaceUpCards(){
   faceUpCards= [
@@ -22,9 +23,17 @@ function loadFaceUpCards(){
   ]
 }
 
+function createDeck(images){
+  for(let i = 0; i < faceUpCards.length; i++){
+    deck.push(images[i])
+    deck.push(images[i]) //We want 2 cards.. so we duplicate
+  }
+}
+
 function setup (){
   createCanvas(window.innerWidth, window.innerHeight);
   loadFaceUpCards();
+  createDeck(faceUpCards);
 }
 
 function draw(){
