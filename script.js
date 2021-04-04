@@ -1,25 +1,25 @@
 let faceUpCards = []
 let deck = []
-
 let cards = []
 
 const rows = 6
 const columns = 6
 
-class Card{
-  constructor(faceUpImage, x, y){
+class Card {
+  constructor(x, y, faceUpImage){
     this.x = x
     this.y = y
     this.width = 250
+    this.height = 250
     this.faceUpImage = faceUpImage
   }
 
   render(){
-    fill(0, 0, 0)
-    stroke(255, 255, 255)
+    fill(255, 255, 255)
+    stroke(0, 0, 0)
     strokeWeight(4)
-    rect(this.x, this.y, this.width, this.width, 20)
-    image(this.faceUpImage, this.x, this.y, this.width, this.width)
+    rect(this.x, this.y, this.width, this.height, 20)
+    image(this.faceUpImage, this.x, this.y, this.width, this.height)
   }
 }
 
@@ -67,17 +67,18 @@ function createCards(){
 }
 
 function setup (){
-  window.addEventListener("resize", ()=>{
-    createCanvas(window.innerWidth, window.innerHeight);
-    console.log("resize");
-  })
+  createCanvas(1000, 1000);
+  // window.addEventListener("resize", ()=>{
+  //   createCanvas(window.innerWidth, window.innerHeight);
+  //   console.log("resize");
+  // })
   loadFaceUpCards();
   createDeck(faceUpCards);
   createCards()
 }
 
 function draw(){
-  background(220);
+  // background(220);
   for(let i = 0; i < cards.length; i++){
     cards[i].render()
   }
