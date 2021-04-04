@@ -16,8 +16,8 @@ class Card {
 
   render(){
     fill(255, 255, 255)
-    stroke(0, 0, 0)
-    strokeWeight(4)
+    // stroke(0, 0, 0)
+    // strokeWeight(4)
     rect(this.x, this.y, this.width, this.height, 20)
     image(this.faceUpImage, this.x, this.y, this.width, this.height)
   }
@@ -51,6 +51,11 @@ function createDeck(images){
     deck.push(images[i])
     deck.push(images[i]) //We want 2 cards.. so we duplicate
   }
+
+  //shuffle cards
+  deck.sort(function(){
+    return 0.5 - random()
+  })
 }
 
 function createCards(){
